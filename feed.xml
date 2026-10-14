@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>Daily Pod</title>
+<link>https://earthnet-nz.github.io/vg-daily-pod-nx7xil/</link>
+<atom:link href="https://earthnet-nz.github.io/vg-daily-pod-nx7xil/feed.xml" rel="self" type="application/rss+xml"/>
+<description>A daily curated listen on AI and the people building it. Curated for Vikram.</description>
+<language>en</language>
+<itunes:author>Daily Pod</itunes:author>
+<itunes:owner><itunes:name>Daily Pod</itunes:name></itunes:owner>
+<itunes:image href="https://earthnet-nz.github.io/vg-daily-pod-nx7xil/cover.jpg"/>
+<image><url>https://earthnet-nz.github.io/vg-daily-pod-nx7xil/cover.jpg</url><title>Daily Pod</title><link>https://earthnet-nz.github.io/vg-daily-pod-nx7xil/</link></image>
+<itunes:category text="Technology"/>
+<itunes:explicit>false</itunes:explicit>
+<itunes:block>Yes</itunes:block>
+<itunes:type>episodic</itunes:type>
+<!--ITEMS-->
+<item>
+<title>Elon Musk: What Comes Next for Humanity</title>
+<description>Elon Musk at X Takeover, Giga Texas, 10 Oct 2026 (Tesla Owners Silicon Valley). Tesla's near-death years, Starship, AI, Optimus and Cybercab. Starts at the 15-minute mark, where Musk comes on.</description>
+<itunes:summary>Elon Musk at X Takeover, Giga Texas, 10 Oct 2026 (Tesla Owners Silicon Valley). Tesla's near-death years, Starship, AI, Optimus and Cybercab. Starts at the 15-minute mark, where Musk comes on.</itunes:summary>
+<enclosure url="https://earthnet-nz.github.io/vg-daily-pod-nx7xil/episodes/ep001-elon-musk-what-comes-next-for-humanity.mp3" length="23170515" type="audio/mpeg"/>
+<guid isPermaLink="false">daily-pod-ep001-elon-musk-what-comes-next-for-humanity.mp3</guid>
+<pubDate>Wed, 14 Oct 2026 07:00:00 GMT</pubDate>
+<itunes:duration>00:48:16</itunes:duration>
+<itunes:episode>1</itunes:episode>
+<itunes:explicit>false</itunes:explicit>
+</item>
+</channel>
+</rss>
