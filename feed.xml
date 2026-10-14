@@ -16,6 +16,17 @@
 <itunes:type>episodic</itunes:type>
 <!--ITEMS-->
 <item>
+<title>Paige Bailey: Build Everyday Apps With Gemini (No Code)</title>
+<description>Google DeepMind's Paige Bailey on Everyday AI, showing how non-coders can build apps with Gemini and Nano Banana, use AI in Google Sheets, and ship practical tools without writing code. About 30 minutes.</description>
+<itunes:summary>Google DeepMind's Paige Bailey on Everyday AI, showing how non-coders can build apps with Gemini and Nano Banana, use AI in Google Sheets, and ship practical tools without writing code. About 30 minutes.</itunes:summary>
+<enclosure url="https://earthnet-nz.github.io/vg-daily-pod-nx7xil/episodes/ep003-paige-bailey-build-everyday-apps-with-gemini-no-co.mp3" length="13458476" type="audio/mpeg"/>
+<guid isPermaLink="false">daily-pod-ep003-paige-bailey-build-everyday-apps-with-gemini-no-co.mp3</guid>
+<pubDate>Wed, 14 Oct 2026 18:47:30 GMT</pubDate>
+<itunes:duration>00:28:02</itunes:duration>
+<itunes:episode>3</itunes:episode>
+<itunes:explicit>false</itunes:explicit>
+</item>
+<item>
 <title>Greg Brockman: Start Building With AI Before You Feel Ready</title>
 <description>OpenAI co-founder Greg Brockman on the Silicon Valley Girl podcast, talking about what AI can already do for everyday people, proactive AI assistants, and why he expects a wave of new one-person businesses. First 30 minutes.</description>
 <itunes:summary>OpenAI co-founder Greg Brockman on the Silicon Valley Girl podcast, talking about what AI can already do for everyday people, proactive AI assistants, and why he expects a wave of new one-person businesses. First 30 minutes.</itunes:summary>
