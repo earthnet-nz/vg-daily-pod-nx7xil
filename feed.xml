@@ -16,6 +16,17 @@
 <itunes:type>episodic</itunes:type>
 <!--ITEMS-->
 <item>
+<title>Sergey Brin and the Gemini team on Gemini 4 Argon</title>
+<description>Logan Kilpatrick hosts Sergey Brin, Josh Woodward, Tulsee Doshi and Melvin Johnson from Google for a conversation about Gemini 4 Argon, how the team got here, and the path ahead. Shared on X by Logan Kilpatrick.</description>
+<itunes:summary>Logan Kilpatrick hosts Sergey Brin, Josh Woodward, Tulsee Doshi and Melvin Johnson from Google for a conversation about Gemini 4 Argon, how the team got here, and the path ahead. Shared on X by Logan Kilpatrick.</itunes:summary>
+<enclosure url="https://earthnet-nz.github.io/vg-daily-pod-nx7xil/episodes/ep004-sergey-brin-and-the-gemini-team-on-gemini-4-argon.mp3" length="14567953" type="audio/mpeg"/>
+<guid isPermaLink="false">daily-pod-ep004-sergey-brin-and-the-gemini-team-on-gemini-4-argon.mp3</guid>
+<pubDate>Wed, 14 Oct 2026 21:38:38 GMT</pubDate>
+<itunes:duration>00:30:20</itunes:duration>
+<itunes:episode>4</itunes:episode>
+<itunes:explicit>false</itunes:explicit>
+</item>
+<item>
 <title>Paige Bailey: Build Everyday Apps With Gemini (No Code)</title>
 <description>Google DeepMind's Paige Bailey on Everyday AI, showing how non-coders can build apps with Gemini and Nano Banana, use AI in Google Sheets, and ship practical tools without writing code. About 30 minutes.</description>
 <itunes:summary>Google DeepMind's Paige Bailey on Everyday AI, showing how non-coders can build apps with Gemini and Nano Banana, use AI in Google Sheets, and ship practical tools without writing code. About 30 minutes.</itunes:summary>
