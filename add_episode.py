@@ -15,10 +15,11 @@ HEAD=f'''<?xml version="1.0" encoding="UTF-8"?>
 <atom:link href="{BASE}/feed.xml" rel="self" type="application/rss+xml"/>
 <description>A daily curated listen on AI and the people building it. Curated for Vikram.</description>
 <language>en</language>
+<lastBuildDate></lastBuildDate>
 <itunes:author>Daily Pod</itunes:author>
 <itunes:owner><itunes:name>Daily Pod</itunes:name></itunes:owner>
-<itunes:image href="{BASE}/cover.jpg"/>
-<image><url>{BASE}/cover.jpg</url><title>Daily Pod</title><link>{BASE}/</link></image>
+<itunes:image href="{BASE}/cover-art.jpg"/>
+<image><url>{BASE}/cover-art.jpg</url><title>Daily Pod</title><link>{BASE}/</link></image>
 <itunes:category text="Technology"/>
 <itunes:explicit>false</itunes:explicit>
 <itunes:block>Yes</itunes:block>
@@ -33,7 +34,16 @@ a=p.parse_args()
 def make_art(img_in,out):
     vf=("[0:v]split[a][b];[a]scale=3000:3000:force_original_aspect_ratio=increase,crop=3000:3000,boxblur=40:5,eq=brightness=-0.15[bg];"
         "[b]scale=3000:3000:force_original_aspect_ratio=decrease[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2,format=yuvj420p")
-    subprocess.run(["ffmpeg","-loglevel","error","-y","-i",img_in,"-filter_complex",vf,"-frames:v","1","-q:v","3",out],check=True)
+    subprocess.run(["ffmpeg","-loglevel","error","-y","-i",img_in,"-filter_complex",vf,"-frames:v","1","-q:v","2",out+".tmp.jpg"],check=True)
+    from PIL import Image
+    Image.open(out+".tmp.jpg").convert("RGB").save(out,"JPEG",quality=82,optimize=True,progressive=False,dpi=(72,72)); os.remove(out+".tmp.jpg")
+def embed_art(mp3,jpg):
+    from PIL import Image
+    small=mp3+".cover.jpg"; Image.open(jpg).resize((1400,1400)).save(small,"JPEG",quality=85,dpi=(72,72))
+    tmpo=mp3+".tmp.mp3"
+    subprocess.run(["ffmpeg","-loglevel","error","-y","-i",mp3,"-i",small,"-map","0:a","-map","1:0","-c","copy","-id3v2_version","3",
+        "-metadata:s:v","title=Album cover","-metadata:s:v","comment=Cover (front)","-disposition:v","attached_pic",tmpo],check=True)
+    os.replace(tmpo,mp3); os.remove(small)
 def fetch_img(u,tmp):
     if re.match(r"https?://.*\.(jpe?g|png|webp)(\?|$)",u,re.I):
         f=f"{tmp}/img"; subprocess.run(["curl","-sfL","-o",f,u],check=True); return f
@@ -53,13 +63,16 @@ size=os.path.getsize(out)
 if size>95*1024*1024: sys.exit("mp3 > 95 MB; GitHub limit is 100 MB")
 dur=float(subprocess.check_output(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",out]).strip())
 img_src=a.image or url_src
-art_tag=f'<itunes:image href="{BASE}/cover.jpg"/>'
+art_tag=f'<itunes:image href="{BASE}/cover-art.jpg"/>'
 if img_src:
     try:
         f=fetch_img(img_src,tmp) if re.match(r"https?://",img_src) else img_src
-        art=name[:-4]+".jpg"; make_art(f,f"{D}/episodes/{art}")
+        art=name[:-4]+"-art.jpg"; make_art(f,f"{D}/episodes/{art}")
         art_tag=f'<itunes:image href="{BASE}/episodes/{art}"/>'
-    except Exception as e: print("artwork failed, using cover.jpg:",e)
+    except Exception as e: print("artwork failed, using cover-art.jpg:",e); art=None
+else: art=None
+embed_art(out,f"{D}/episodes/{art}" if art else f"{D}/cover-art.jpg")
+size=os.path.getsize(out)
 h,m,s=int(dur//3600),int(dur%3600//60),int(dur%60)
 date=a.date or email.utils.formatdate(time.time(),usegmt=True)
 item=f'''<item>
@@ -77,6 +90,7 @@ item=f'''<item>
 '''
 fp=f"{D}/feed.xml"
 feed=open(fp).read() if os.path.exists(fp) else HEAD
+feed=re.sub(r"<lastBuildDate>.*?</lastBuildDate>",f"<lastBuildDate>{email.utils.formatdate(usegmt=True)}</lastBuildDate>",feed)
 feed=feed.replace("<!--ITEMS-->\n","<!--ITEMS-->\n"+item,1)
 open(fp,"w").write(feed)
 import xml.dom.minidom; xml.dom.minidom.parse(fp)
