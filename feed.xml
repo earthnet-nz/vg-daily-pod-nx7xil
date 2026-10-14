@@ -6,7 +6,7 @@
 <atom:link href="https://earthnet-nz.github.io/vg-daily-pod-nx7xil/feed.xml" rel="self" type="application/rss+xml"/>
 <description>A daily curated listen on AI and the people building it. Curated for Vikram.</description>
 <language>en</language>
-<lastBuildDate>Wed, 14 Oct 2026 23:35:23 GMT</lastBuildDate>
+<lastBuildDate>Wed, 14 Oct 2026 23:45:44 GMT</lastBuildDate>
 <itunes:author>Daily Pod</itunes:author>
 <itunes:owner><itunes:name>Daily Pod</itunes:name></itunes:owner>
 <itunes:image href="https://earthnet-nz.github.io/vg-daily-pod-nx7xil/cover-art.jpg"/>
@@ -20,7 +20,7 @@
 <title>Sergey Brin and the Gemini team on Gemini 4 Argon</title>
 <description>Logan Kilpatrick hosts Sergey Brin, Josh Woodward, Tulsee Doshi and Melvin Johnson from Google for a conversation about Gemini 4 Argon, how the team got here, and the path ahead. Shared on X by Logan Kilpatrick.</description>
 <itunes:summary>Logan Kilpatrick hosts Sergey Brin, Josh Woodward, Tulsee Doshi and Melvin Johnson from Google for a conversation about Gemini 4 Argon, how the team got here, and the path ahead. Shared on X by Logan Kilpatrick.</itunes:summary>
-<enclosure url="https://earthnet-nz.github.io/vg-daily-pod-nx7xil/episodes/ep004-sergey-brin-and-the-gemini-team-on-gemini-4-argon.mp3" length="14667326" type="audio/mpeg"/>
+<enclosure url="https://earthnet-nz.github.io/vg-daily-pod-nx7xil/episodes/ep004-sergey-brin-and-the-gemini-team-on-gemini-4-argon.mp3" length="14567953" type="audio/mpeg"/>
 <guid isPermaLink="false">daily-pod-ep004-sergey-brin-and-the-gemini-team-on-gemini-4-argon.mp3</guid>
 <pubDate>Wed, 14 Oct 2026 21:38:38 GMT</pubDate>
 <itunes:duration>00:30:20</itunes:duration>
@@ -32,7 +32,7 @@
 <title>Paige Bailey: Build Everyday Apps With Gemini (No Code)</title>
 <description>Google DeepMind's Paige Bailey on Everyday AI, showing how non-coders can build apps with Gemini and Nano Banana, use AI in Google Sheets, and ship practical tools without writing code. About 30 minutes.</description>
 <itunes:summary>Google DeepMind's Paige Bailey on Everyday AI, showing how non-coders can build apps with Gemini and Nano Banana, use AI in Google Sheets, and ship practical tools without writing code. About 30 minutes.</itunes:summary>
-<enclosure url="https://earthnet-nz.github.io/vg-daily-pod-nx7xil/episodes/ep003-paige-bailey-build-everyday-apps-with-gemini-no-co.mp3" length="13608166" type="audio/mpeg"/>
+<enclosure url="https://earthnet-nz.github.io/vg-daily-pod-nx7xil/episodes/ep003-paige-bailey-build-everyday-apps-with-gemini-no-co.mp3" length="13458476" type="audio/mpeg"/>
 <guid isPermaLink="false">daily-pod-ep003-paige-bailey-build-everyday-apps-with-gemini-no-co.mp3</guid>
 <pubDate>Wed, 14 Oct 2026 18:47:30 GMT</pubDate>
 <itunes:duration>00:28:02</itunes:duration>
@@ -44,7 +44,7 @@
 <title>Greg Brockman: Start Building With AI Before You Feel Ready</title>
 <description>OpenAI co-founder Greg Brockman on the Silicon Valley Girl podcast, talking about what AI can already do for everyday people, proactive AI assistants, and why he expects a wave of new one-person businesses. First 30 minutes.</description>
 <itunes:summary>OpenAI co-founder Greg Brockman on the Silicon Valley Girl podcast, talking about what AI can already do for everyday people, proactive AI assistants, and why he expects a wave of new one-person businesses. First 30 minutes.</itunes:summary>
-<enclosure url="https://earthnet-nz.github.io/vg-daily-pod-nx7xil/episodes/ep002-greg-brockman-start-building-with-ai-before-you-fe.mp3" length="14608314" type="audio/mpeg"/>
+<enclosure url="https://earthnet-nz.github.io/vg-daily-pod-nx7xil/episodes/ep002-greg-brockman-start-building-with-ai-before-you-fe.mp3" length="14400428" type="audio/mpeg"/>
 <guid isPermaLink="false">daily-pod-ep002-greg-brockman-start-building-with-ai-before-you-fe.mp3</guid>
 <pubDate>Wed, 14 Oct 2026 07:17:37 GMT</pubDate>
 <itunes:duration>00:30:00</itunes:duration>
@@ -56,7 +56,7 @@
 <title>Elon Musk: What Comes Next for Humanity</title>
 <description>Elon Musk at X Takeover, Giga Texas, 10 Oct 2026 (Tesla Owners Silicon Valley). Tesla's near-death years, Starship, AI, Optimus and Cybercab. Starts at the 15-minute mark, where Musk comes on.</description>
 <itunes:summary>Elon Musk at X Takeover, Giga Texas, 10 Oct 2026 (Tesla Owners Silicon Valley). Tesla's near-death years, Starship, AI, Optimus and Cybercab. Starts at the 15-minute mark, where Musk comes on.</itunes:summary>
-<enclosure url="https://earthnet-nz.github.io/vg-daily-pod-nx7xil/episodes/ep001-elon-musk-what-comes-next-for-humanity.mp3" length="23326309" type="audio/mpeg"/>
+<enclosure url="https://earthnet-nz.github.io/vg-daily-pod-nx7xil/episodes/ep001-elon-musk-what-comes-next-for-humanity.mp3" length="23170515" type="audio/mpeg"/>
 <guid isPermaLink="false">daily-pod-ep001-elon-musk-what-comes-next-for-humanity.mp3</guid>
 <pubDate>Wed, 14 Oct 2026 07:00:00 GMT</pubDate>
 <itunes:duration>00:48:16</itunes:duration>

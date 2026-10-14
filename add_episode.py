@@ -71,7 +71,7 @@ if img_src:
         art_tag=f'<itunes:image href="{BASE}/episodes/{art}"/>'
     except Exception as e: print("artwork failed, using cover-art.jpg:",e); art=None
 else: art=None
-embed_art(out,f"{D}/episodes/{art}" if art else f"{D}/cover-art.jpg")
+# ID3 art embedding disabled: broke Apple Podcasts follow (see commit history)
 size=os.path.getsize(out)
 h,m,s=int(dur//3600),int(dur%3600//60),int(dur%60)
 date=a.date or email.utils.formatdate(time.time(),usegmt=True)

@@ -10,5 +10,5 @@ Keep files under 100 MB (GitHub limit). robots.txt and itunes:block keep it out 
 Every <item> must carry its own <itunes:image>, and the channel keeps <itunes:image href=".../cover-art.jpg"/>.
 - `--image FILE-or-URL` sets the episode art explicitly (local image, direct image URL, or a page URL yt-dlp can get a thumbnail from).
 - Without `--image`, a URL source (YouTube, X, etc.) auto-fetches its thumbnail with yt-dlp.
-- Art is converted to a 3000x3000 RGB JPG (thumbnail centred on a blurred fill) and saved as episodes/epNNN-<slug>-art.jpg (baseline, 72 dpi, kept under ~500 KB) and also embedded in the mp3 as ID3v2.3 APIC front cover (1400px) next to the mp3.
+- Art is converted to a 3000x3000 RGB JPG (thumbnail centred on a blurred fill) and saved as episodes/epNNN-<slug>-art.jpg (baseline, 72 dpi, kept under ~500 KB) (do NOT embed art in the mp3s; that broke following in Apple Podcasts) next to the mp3.
 - If no image can be found (local audio file and no --image), the item falls back to cover-art.jpg, so always pass --image for local files.
