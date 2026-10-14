@@ -24,6 +24,7 @@
 <pubDate>Wed, 14 Oct 2026 21:38:38 GMT</pubDate>
 <itunes:duration>00:30:20</itunes:duration>
 <itunes:episode>4</itunes:episode>
+<itunes:image href="https://earthnet-nz.github.io/vg-daily-pod-nx7xil/episodes/ep004-sergey-brin-and-the-gemini-team-on-gemini-4-argon.jpg"/>
 <itunes:explicit>false</itunes:explicit>
 </item>
 <item>
@@ -35,6 +36,7 @@
 <pubDate>Wed, 14 Oct 2026 18:47:30 GMT</pubDate>
 <itunes:duration>00:28:02</itunes:duration>
 <itunes:episode>3</itunes:episode>
+<itunes:image href="https://earthnet-nz.github.io/vg-daily-pod-nx7xil/episodes/ep003-paige-bailey-build-everyday-apps-with-gemini-no-co.jpg"/>
 <itunes:explicit>false</itunes:explicit>
 </item>
 <item>
@@ -46,6 +48,7 @@
 <pubDate>Wed, 14 Oct 2026 07:17:37 GMT</pubDate>
 <itunes:duration>00:30:00</itunes:duration>
 <itunes:episode>2</itunes:episode>
+<itunes:image href="https://earthnet-nz.github.io/vg-daily-pod-nx7xil/episodes/ep002-greg-brockman-start-building-with-ai-before-you-fe.jpg"/>
 <itunes:explicit>false</itunes:explicit>
 </item>
 <item>
@@ -57,6 +60,7 @@
 <pubDate>Wed, 14 Oct 2026 07:00:00 GMT</pubDate>
 <itunes:duration>00:48:16</itunes:duration>
 <itunes:episode>1</itunes:episode>
+<itunes:image href="https://earthnet-nz.github.io/vg-daily-pod-nx7xil/episodes/ep001-elon-musk-what-comes-next-for-humanity.jpg"/>
 <itunes:explicit>false</itunes:explicit>
 </item>
 </channel>

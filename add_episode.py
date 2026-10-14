@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Usage: add_episode.py <audio file|URL> "<title>" "<description>" [--start SECONDS] [--no-push] [--date RFC822]"""
+"""Usage: add_episode.py <audio file|URL> "<title>" "<description>" [--start SECONDS] [--image FILE|URL] [--no-push] [--date RFC822]
+Artwork: --image wins; otherwise a URL source auto-fetches its thumbnail; otherwise falls back to cover.jpg.
+Art is made 3000x3000 RGB JPG (blurred fill + centred thumbnail) in episodes/epNNN-*.jpg."""
 import sys, os, re, subprocess, argparse, glob, tempfile, html, email.utils, time
 from xml.sax.saxutils import escape
 D=os.path.dirname(os.path.abspath(__file__))
@@ -26,9 +28,18 @@ HEAD=f'''<?xml version="1.0" encoding="UTF-8"?>
 </rss>
 '''
 p=argparse.ArgumentParser(); p.add_argument("src"); p.add_argument("title"); p.add_argument("description")
-p.add_argument("--start",type=float,default=0); p.add_argument("--no-push",action="store_true"); p.add_argument("--date")
+p.add_argument("--start",type=float,default=0); p.add_argument("--no-push",action="store_true"); p.add_argument("--date"); p.add_argument("--image")
 a=p.parse_args()
-src=a.src; tmp=tempfile.mkdtemp()
+def make_art(img_in,out):
+    vf=("[0:v]split[a][b];[a]scale=3000:3000:force_original_aspect_ratio=increase,crop=3000:3000,boxblur=40:5,eq=brightness=-0.15[bg];"
+        "[b]scale=3000:3000:force_original_aspect_ratio=decrease[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2,format=yuvj420p")
+    subprocess.run(["ffmpeg","-loglevel","error","-y","-i",img_in,"-filter_complex",vf,"-frames:v","1","-q:v","3",out],check=True)
+def fetch_img(u,tmp):
+    if re.match(r"https?://.*\.(jpe?g|png|webp)(\?|$)",u,re.I):
+        f=f"{tmp}/img"; subprocess.run(["curl","-sfL","-o",f,u],check=True); return f
+    subprocess.run([YTDLP,"-q","--skip-download","--write-thumbnail","--convert-thumbnails","jpg","-o",f"{tmp}/thumb",u],check=True)
+    return glob.glob(f"{tmp}/thumb*.jpg")[0]
+src=a.src; tmp=tempfile.mkdtemp(); url_src=src if re.match(r"https?://",src) else None
 if re.match(r"https?://",src):
     subprocess.run([YTDLP,"-f","bestaudio/best","-o",f"{tmp}/in.%(ext)s",src],check=True)
     src=glob.glob(f"{tmp}/in.*")[0]
@@ -41,6 +52,14 @@ subprocess.run(cmd,check=True)
 size=os.path.getsize(out)
 if size>95*1024*1024: sys.exit("mp3 > 95 MB; GitHub limit is 100 MB")
 dur=float(subprocess.check_output(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",out]).strip())
+img_src=a.image or url_src
+art_tag=f'<itunes:image href="{BASE}/cover.jpg"/>'
+if img_src:
+    try:
+        f=fetch_img(img_src,tmp) if re.match(r"https?://",img_src) else img_src
+        art=name[:-4]+".jpg"; make_art(f,f"{D}/episodes/{art}")
+        art_tag=f'<itunes:image href="{BASE}/episodes/{art}"/>'
+    except Exception as e: print("artwork failed, using cover.jpg:",e)
 h,m,s=int(dur//3600),int(dur%3600//60),int(dur%60)
 date=a.date or email.utils.formatdate(time.time(),usegmt=True)
 item=f'''<item>
@@ -52,6 +71,7 @@ item=f'''<item>
 <pubDate>{date}</pubDate>
 <itunes:duration>{h:02d}:{m:02d}:{s:02d}</itunes:duration>
 <itunes:episode>{n}</itunes:episode>
+{art_tag}
 <itunes:explicit>false</itunes:explicit>
 </item>
 '''
