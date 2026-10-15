@@ -15,9 +15,8 @@ HEAD=f'''<?xml version="1.0" encoding="UTF-8"?>
 <atom:link href="{BASE}/feed.xml" rel="self" type="application/rss+xml"/>
 <description>A daily curated listen on AI and the people building it. Curated for Vikram.</description>
 <language>en</language>
-<lastBuildDate></lastBuildDate>
 <itunes:author>Daily Pod</itunes:author>
-<itunes:owner><itunes:name>Daily Pod</itunes:name></itunes:owner>
+<itunes:owner><itunes:name>Daily Pod</itunes:name><itunes:email>vikramgorur@gmail.com</itunes:email></itunes:owner>
 <itunes:image href="{BASE}/cover-art.jpg"/>
 <image><url>{BASE}/cover-art.jpg</url><title>Daily Pod</title><link>{BASE}/</link></image>
 <itunes:category text="Technology"/>
@@ -90,9 +89,9 @@ item=f'''<item>
 '''
 fp=f"{D}/feed.xml"
 feed=open(fp).read() if os.path.exists(fp) else HEAD
-feed=re.sub(r"<lastBuildDate>.*?</lastBuildDate>",f"<lastBuildDate>{email.utils.formatdate(usegmt=True)}</lastBuildDate>",feed)
 feed=feed.replace("<!--ITEMS-->\n","<!--ITEMS-->\n"+item,1)
 open(fp,"w").write(feed)
+open(f"{D}/feed2.xml","w").write(feed.replace('/feed.xml" rel="self"','/feed2.xml" rel="self"'))
 import xml.dom.minidom; xml.dom.minidom.parse(fp)
 print("added",name,size,"bytes")
 if not a.no_push:
