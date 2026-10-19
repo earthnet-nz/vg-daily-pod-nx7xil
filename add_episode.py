@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Usage: add_episode.py <audio file|URL> "<title>" "<description>" [--start SECONDS] [--image FILE|URL] [--no-push] [--date RFC822]
-Artwork: --image wins; otherwise a URL source auto-fetches its thumbnail; otherwise falls back to cover.jpg.
+Artwork: --image wins; otherwise a URL source auto-fetches its thumbnail; otherwise falls back to cover-milkyway.jpg (the show cover).
 Art is made 3000x3000 RGB JPG (blurred fill + centred thumbnail) in episodes/epNNN-*.jpg."""
 import sys, os, re, subprocess, argparse, glob, tempfile, html, email.utils, time
 from xml.sax.saxutils import escape
@@ -13,12 +13,12 @@ HEAD=f'''<?xml version="1.0" encoding="UTF-8"?>
 <title>Daily Pod</title>
 <link>{BASE}/</link>
 <atom:link href="{BASE}/feed.xml" rel="self" type="application/rss+xml"/>
-<description>A daily curated listen on AI and the people building it. Curated for Vikram.</description>
+<description>A daily curated listen on AI and the people building it. Curated for Vikram. Cover: ESO/Yuri Beletsky, CC BY 4.0.</description>
 <language>en</language>
 <itunes:author>Daily Pod</itunes:author>
 <itunes:owner><itunes:name>Daily Pod</itunes:name><itunes:email>vikramgorur@gmail.com</itunes:email></itunes:owner>
-<itunes:image href="{BASE}/cover-art.jpg"/>
-<image><url>{BASE}/cover-art.jpg</url><title>Daily Pod</title><link>{BASE}/</link></image>
+<itunes:image href="{BASE}/cover-milkyway.jpg"/>
+<image><url>{BASE}/cover-milkyway.jpg</url><title>Daily Pod</title><link>{BASE}/</link></image>
 <itunes:category text="Technology"/>
 <itunes:explicit>false</itunes:explicit>
 <itunes:block>Yes</itunes:block>
@@ -62,13 +62,13 @@ size=os.path.getsize(out)
 if size>95*1024*1024: sys.exit("mp3 > 95 MB; GitHub limit is 100 MB")
 dur=float(subprocess.check_output(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",out]).strip())
 img_src=a.image or url_src
-art_tag=f'<itunes:image href="{BASE}/cover-art.jpg"/>'
+art_tag=f'<itunes:image href="{BASE}/cover-milkyway.jpg"/>'
 if img_src:
     try:
         f=fetch_img(img_src,tmp) if re.match(r"https?://",img_src) else img_src
         art=name[:-4]+"-art.jpg"; make_art(f,f"{D}/episodes/{art}")
         art_tag=f'<itunes:image href="{BASE}/episodes/{art}"/>'
-    except Exception as e: print("artwork failed, using cover-art.jpg:",e); art=None
+    except Exception as e: print("artwork failed, using cover-milkyway.jpg:",e); art=None
 else: art=None
 # ID3 art embedding disabled: broke Apple Podcasts follow (see commit history)
 size=os.path.getsize(out)

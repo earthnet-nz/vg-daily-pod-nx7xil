@@ -7,8 +7,11 @@ Downloads (yt-dlp for URLs), converts to mono 64 kbps mp3 in episodes/, prepends
 Keep files under 100 MB (GitHub limit). robots.txt and itunes:block keep it out of directories.
 
 ## Artwork (required on every episode)
-Every <item> must carry its own <itunes:image>, and the channel keeps <itunes:image href=".../cover-art.jpg"/>.
+Every <item> must carry its own <itunes:image>, and the channel keeps <itunes:image href=".../cover-milkyway.jpg"/> (show cover since 19 Oct 2026: ESO/Yuri Beletsky, CC BY 4.0, see CREDITS.md; keep the credit in the channel description).
 - `--image FILE-or-URL` sets the episode art explicitly (local image, direct image URL, or a page URL yt-dlp can get a thumbnail from).
 - Without `--image`, a URL source (YouTube, X, etc.) auto-fetches its thumbnail with yt-dlp.
 - Art is converted to a 3000x3000 RGB JPG (thumbnail centred on a blurred fill) and saved as episodes/epNNN-<slug>-art.jpg (baseline, 72 dpi, kept under ~500 KB) (do NOT embed art in the mp3s; that broke following in Apple Podcasts) next to the mp3.
-- If no image can be found (local audio file and no --image), the item falls back to cover-art.jpg, so always pass --image for local files.
+- If no image can be found (local audio file and no --image), the item falls back to cover-milkyway.jpg, so always pass --image for local files.
+
+## Apple Podcasts and episode art
+Tested 19 Oct 2026: Apple Podcasts on iPhone does not show per-episode art for this private (itunes:block, follow by URL) feed, whether from item <itunes:image>, embedded MP3 ID3 art, or an M4A covr atom. Only the show cover shows. Item art is kept for other apps.

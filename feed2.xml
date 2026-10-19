@@ -4,12 +4,12 @@
 <title>Daily Pod</title>
 <link>https://earthnet-nz.github.io/vg-daily-pod-nx7xil/</link>
 <atom:link href="https://earthnet-nz.github.io/vg-daily-pod-nx7xil/feed2.xml" rel="self" type="application/rss+xml"/>
-<description>A daily curated listen on AI and the people building it. Curated for Vikram.</description>
+<description>A daily curated listen on AI and the people building it. Curated for Vikram. Cover: ESO/Yuri Beletsky, CC BY 4.0.</description>
 <language>en</language>
 <itunes:author>Daily Pod</itunes:author>
 <itunes:owner><itunes:name>Daily Pod</itunes:name><itunes:email>vikramgorur@gmail.com</itunes:email></itunes:owner>
-<itunes:image href="https://earthnet-nz.github.io/vg-daily-pod-nx7xil/cover-art.jpg"/>
-<image><url>https://earthnet-nz.github.io/vg-daily-pod-nx7xil/cover-art.jpg</url><title>Daily Pod</title><link>https://earthnet-nz.github.io/vg-daily-pod-nx7xil/</link></image>
+<itunes:image href="https://earthnet-nz.github.io/vg-daily-pod-nx7xil/cover-milkyway.jpg"/>
+<image><url>https://earthnet-nz.github.io/vg-daily-pod-nx7xil/cover-milkyway.jpg</url><title>Daily Pod</title><link>https://earthnet-nz.github.io/vg-daily-pod-nx7xil/</link></image>
 <itunes:category text="Technology"/>
 <itunes:explicit>false</itunes:explicit>
 <itunes:block>Yes</itunes:block>
