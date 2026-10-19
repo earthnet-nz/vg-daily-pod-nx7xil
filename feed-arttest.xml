@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>Daily Pod art test</title>
+<link>https://earthnet-nz.github.io/vg-daily-pod-nx7xil/</link>
+<atom:link href="https://earthnet-nz.github.io/vg-daily-pod-nx7xil/feed-arttest.xml" rel="self" type="application/rss+xml"/>
+<description>Test feed to check episode artwork in Apple Podcasts. Not the daily show.</description>
+<language>en</language>
+<itunes:author>Daily Pod</itunes:author>
+<itunes:owner><itunes:name>Daily Pod</itunes:name><itunes:email>vikramgorur@gmail.com</itunes:email></itunes:owner>
+<itunes:image href="https://earthnet-nz.github.io/vg-daily-pod-nx7xil/cover-art.jpg"/>
+<image><url>https://earthnet-nz.github.io/vg-daily-pod-nx7xil/cover-art.jpg</url><title>Daily Pod art test</title><link>https://earthnet-nz.github.io/vg-daily-pod-nx7xil/</link></image>
+<itunes:category text="Technology"/>
+<itunes:explicit>false</itunes:explicit>
+<itunes:block>Yes</itunes:block>
+<itunes:type>episodic</itunes:type>
+<item>
+<title>Art test: Paul Graham on startups</title>
+<description>Same Paul Graham episode as in Daily Pod, with the artwork embedded in the audio file. If you see the Paul Graham picture instead of the purple Daily Pod cover on the player, embedded art works.</description>
+<enclosure url="https://earthnet-nz.github.io/vg-daily-pod-nx7xil/arttest/arttest-ep006-paul-graham.mp3" length="11095591" type="audio/mpeg"/>
+<guid isPermaLink="false">daily-pod-arttest-2026-10-19-ep006-id3</guid>
+<pubDate>Mon, 19 Oct 2026 08:30:00 GMT</pubDate>
+<itunes:duration>00:21:24</itunes:duration>
+<itunes:episode>1</itunes:episode>
+<itunes:image href="https://earthnet-nz.github.io/vg-daily-pod-nx7xil/arttest/arttest-ep006-paul-graham-art.jpg"/>
+<itunes:explicit>false</itunes:explicit>
+</item>
+</channel>
+</rss>
